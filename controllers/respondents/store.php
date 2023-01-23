@@ -15,9 +15,6 @@ if (! Validator::string($_POST['name'], 1, 55)) {
     $errors['name'] = 'Name is Required';
 }
 
-if (! Validator::boolean($_POST['status'])) {
-    $errors['status'] = 'Status is Required';
-}
 
 if (! empty($errors)) {
     return view("respondents/create.view.php", [

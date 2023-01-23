@@ -31,5 +31,7 @@ $router->put('/respondent-type', 'controllers/respondent-types/update.php');
 
 // Respondent 
 $router->get('/respondents', 'controllers/respondents/index.php');
+$router->get('/respondent', 'controllers/respondents/edit.php');
 $router->get('/respondents/create', 'controllers/respondents/create.php');
 $router->post('/respondents', 'controllers/respondents/store.php');
+$router->put('/respondent', 'controllers/respondents/update.php');

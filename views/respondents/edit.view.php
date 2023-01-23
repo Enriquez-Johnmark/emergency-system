@@ -23,54 +23,46 @@
                     </div>
                 <?php endif; ?>
 
-                <?php if (isset($errors['status']) ) : ?>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                <strong><?= $errors['status'] ?></strong>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            
-                        </div>
-                        
-                    </div>
-                <?php endif; ?>
+               
 				
                 <div class="row">
                     <div class="col-md-4">
-                        <form method="POST" action="/respondents">
+                        <form method="POST">
+                            <input type="hidden" name="_method" value="PUT">
+                            <input type="hidden" name="id" value="<?= $respondentId['id'] ?>">
                             <div class="form-group">
                                 <label>Name</label>
-                                <input type="text" class="form-control" name="name">
+                                <input type="text" class="form-control" name="name" value="<?= $respondentId['name'] ?>">
+                                
                             </div>
                             <div class="form-group">
                                 <label>Respondent Type</label>
-                                
-                                <select class="form-control" name="respondent_type_id">
-                                       <option value="" selected disabled>-- Select Respondent Types --</option>
-                                       <?php foreach($respondentTypes as $respondentType) : ?>
-                                       <option value="<?= $respondentType['id'] ?>"><?= $respondentType['name'] ?></option>
-                                       <!-- <option value="0">Ambulance</option> -->
-                                       <?php endforeach; ?>
+                                <select class="form-control" name="respondent_type_id" id="status" required="true">
+                                <option value="" selected disabled>-- Select Respondent Types --</option>
+                                <?php foreach ( $respondentTypes as $respondentType ): ?>
+                                <option value="<?php echo $respondentType['id']; ?>" 
+                                <?php if ($respondentType['id'] == $respondentId['respondent_type_id']) echo ' selected="selected"'; ?>>
+                                        <?php echo $respondentType['name']; ?>
+                                </option>
+                                <?php endforeach; ?>
                                 </select>
+                               
                                
                             </div>
                             <div class="form-group">
                                 <label>Team Leader</label>
-                                <input type="text" class="form-control" name="team_leader">
+                                <input type="text" class="form-control" name="team_leader" value="<?= $respondentId['team_leader'] ?>">
                             </div>
                             <div class="form-group">
                                 <label>Mobile No./Tel No.</label>
-                                <input type="text" class="form-control" name="mobile_no">
+                                <input type="number" class="form-control" name="mobile_no" value="<?= $respondentId['mobile_no'] ?>">
                             </div>
                             <div class="form-group">
                                 <label>Status</label>
-                                <select class="form-control" name="status" id="status" required="true">
+                                    <select class="form-control" name="status" id="status" required="true">
                                        <option value="" selected disabled>-- Select Status --</option>
-                                       <option value="1">Active</option>
-                                       <option value="0">Inactive</option>
+                                       <option value="1"<?php if ($respondentId['status'] == '1') echo ' selected="selected"'; ?>>Active</option>
+                                       <option value="0"<?php if ($respondentId['status'] == '0') echo ' selected="selected"'; ?>>Inactive</option>
                                     </select>
                             </div>
                             <div class="text-right">

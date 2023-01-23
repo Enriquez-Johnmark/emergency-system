@@ -30,18 +30,18 @@
                     <div class="col-md-4">
                         <form method="POST">
                             <input type="hidden" name="_method" value="PUT">
-                            <input type="hidden" name="id" value="<?= $respondentId['id'] ?>">
+                            <input type="hidden" name="id" value="<?= $respondentTypeId['id'] ?>">
                             <div class="form-group">
                                 <label>Name</label>
-                                <input type="text" placeholder="Enter Name Here" class="form-control" value="<?= $respondentId['name'] ?>" name="name">
+                                <input type="text" placeholder="Enter Name Here" class="form-control" value="<?= $respondentTypeId['name'] ?>" name="name">
                             </div>
 
                             <div class="form-group">
                                 <label>Status</label>
                                 <select class="form-control" name="status" id="status" required="true">
                                        <option value="" selected disabled>-- Select Status --</option>
-                                       <option value="1"<?php if ($respondentId['status'] == '1') echo ' selected="selected"'; ?>>Active</option>
-                                       <option value="0"<?php if ($respondentId['status'] == '0') echo ' selected="selected"'; ?>>Inactive</option>
+                                       <option value="1"<?php if ($respondentTypeId['status'] == '1') echo ' selected="selected"'; ?>>Active</option>
+                                       <option value="0"<?php if ($respondentTypeId['status'] == '0') echo ' selected="selected"'; ?>>Inactive</option>
                                     </select>
                             </div>
                             <div class="text-right">

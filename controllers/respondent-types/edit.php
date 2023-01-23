@@ -7,7 +7,7 @@ $db = new Database($config['database']);
 
 // $currentUserId = 1;
 
-$respondentId = $db->query('select * from respondent_types where id = :id', [
+$respondentTypeId = $db->query('select * from respondent_types where id = :id', [
     'id' => $_GET['id']
 ])->findOrFail();
 
@@ -15,6 +15,6 @@ $respondentId = $db->query('select * from respondent_types where id = :id', [
 
 view("respondent-types/edit.view.php", [
     'heading' => 'Edit Respondent Type',
-    'respondentId' => $respondentId,
+    'respondentTypeId' => $respondentTypeId,
     'errors'    => []
 ]);

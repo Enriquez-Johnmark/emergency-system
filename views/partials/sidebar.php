@@ -11,7 +11,7 @@
                 
                 <li class="list-divider"></li>
                 <li class="menu-title mt-3"> <span>Configuration</span> </li>
-                <li class="<?= ($activePage == 'respondents') ? 'active':''; ?>"> <a href="/respondents"><i class="fas fa-cog"></i> <span>Respondent</span></a> </li>
+                <li class="<?= ($activePage == 'respondents') ? 'active':''; ?>"> <a href="/respondents"><i class="fas fa-cog"></i> <span>Respondents</span></a> </li>
                 <li class="<?= ($activePage == 'respondent-types') ? 'active':''; ?>"> <a href="/respondent-types"><i class="fas fa-cog"></i> <span>Respondent Types</span></a> </li>
                 <li class="<?= ($activePage == 'incident-types') ? 'active':''; ?>"> <a href="/incident-types"><i class="fas fa-cog"></i> <span>Incident Types</span></a> </li>
             </ul>
