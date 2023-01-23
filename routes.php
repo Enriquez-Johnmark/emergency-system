@@ -24,8 +24,11 @@ $router->put('/incident-type', 'controllers/incident-types/update.php');
 
 // Respondent Type
 $router->get('/respondent-types', 'controllers/respondent-types/index.php');
+$router->get('/respondent-type', 'controllers/respondent-types/edit.php');
 $router->get('/respondent-types/create', 'controllers/respondent-types/create.php');
 $router->post('/respondent-types', 'controllers/respondent-types/store.php');
+$router->put('/respondent-type', 'controllers/respondent-types/update.php');
+
 // Respondent 
 $router->get('/respondents', 'controllers/respondents/index.php');
 $router->get('/respondents/create', 'controllers/respondents/create.php');
