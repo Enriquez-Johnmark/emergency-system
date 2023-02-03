@@ -1,11 +1,18 @@
 <?php
 
 // Auth
-$router->get('/', 'controllers/auth/index.php');
+$router->get('/', 'controllers/auth/home.php');
+$router->get('/login', 'controllers/auth/index.php');
+$router->post('/login', 'controllers/auth/login.php');
+$router->post('/logout', 'controllers/auth/logout.php');
 
+// Register
+$router->get('/register', 'controllers/register/index.php');
+$router->post('/register', 'controllers/register/store.php');
 
-// Dashboard
-$router->get('/dashboard', 'controllers/dashboard/index.php');
+//User Dashboard
+$router->get('/user', 'controllers/dashboard/user.php');
+$router->get('/dashboard', 'controllers/dashboard/admin.php');
 
 // User
 

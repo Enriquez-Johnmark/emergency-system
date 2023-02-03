@@ -1,5 +1,5 @@
 <?php
 
-view("dashboard/index.view.php", [
+view("auth/home.view.php", [
     'heading' => 'Dashboard',
 ]);

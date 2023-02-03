@@ -1,3 +1,9 @@
+<?php
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <?php  ?>
@@ -34,10 +40,29 @@
 						<div class="user-header">
 							<div class="avatar avatar-sm"> <img src="/assets/img/profiles/avatar.png" alt="User Image" class="avatar-img rounded-circle"> </div>
 							<div class="user-text">
-								<h6>Manager</h6>
+								<h6>Hi,<?= $_SESSION['first_name'] ?></h6>
+
+							<?php if($_SESSION['roles'] == '1') : ?>	
 								<p class="text-muted mb-0">Administrator</p>
+							<?php endif;?>
+
+							<?php if($_SESSION['roles'] == '2') : ?>	
+								<p class="text-muted mb-0">Dispatcher</p>
+							<?php endif;?>
+
+							<?php if($_SESSION['roles'] == '3') : ?>	
+								<p class="text-muted mb-0">User</p>
+							<?php endif;?>
 							</div>
-						</div> <a class="dropdown-item" href="profile.html">My Profile</a> <a class="dropdown-item" href="settings.html">Account Settings</a> <a class="dropdown-item" href="login.html">Logout</a> </div>
+						</div> 
+							<!-- <a class="dropdown-item" href="profile.html">My Profile</a> 
+							<a class="dropdown-item" href="settings.html">Account Settings</a>  -->
+							
+							<!-- <a class="dropdown-item button" type="submit" href="/logout">Logout 1</a> -->
+							<form action="/logout" method="POST">
+								<button type="submit" name="logout" class="btn-link dropdown-item button">Logout</button>
+							</form>
+					 	</div>
 				</li>
 			</ul>
 		</div>

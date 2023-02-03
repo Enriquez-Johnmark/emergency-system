@@ -1,5 +1,12 @@
+<?php
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+?>
 <?php require base_path('views/partials/head.php') ?>
 <?php require base_path('views/partials/sidebar.php') ?>
+<?php require base_path('Core/Authentication.php') ?>
 
 
 <div class="page-wrapper">
@@ -12,6 +19,9 @@
 								<li class="breadcrumb-item active"><?= $heading ?></li>
 							</ul>
 						</div>
+						<a href="tel:123123123123">Dial Emergency Number Admin</a>
+
+						<?php echo $_SESSION['email']; ?>
 					</div>
 				</div>
 			</div>
