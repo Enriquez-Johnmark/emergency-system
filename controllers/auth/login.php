@@ -41,23 +41,27 @@ if($users > 0)
         
 
         $_SESSION['auth'] = true;
+        $_SESSION['id'] = $users['id'];
 		$_SESSION['email'] = $users['email'];
         $_SESSION['first_name'] = $users['first_name'];
         $_SESSION['last_name'] = $users['last_name'];
         $_SESSION['roles'] = $users['roles'];
         // header('location: /dashboard');
         
+        if($_SESSION['roles'] == '3') // User
+        {
 
+           
+            header('location: /user');
+            exit(0);
+        }
         if($_SESSION['roles'] == '1' || $_SESSION['roles'] == '2') // Admin
         {
             header('location: /dashboard');
             die();
         }
-        if($_SESSION['roles'] == '3') // Admin
-        {
-            header('location: /user');
-            die();
-        }
+        
+    
 
         
 

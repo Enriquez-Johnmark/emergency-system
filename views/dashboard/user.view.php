@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 use Core\Validator;
@@ -10,28 +11,60 @@ $db = new Database($config['database']);
 
 if(!isset($_SESSION['auth']))
 {
-    $_SESSION['message'] = 'Login to Access Dashboard';
+    $_SESSION['error'] = 'Login to Access Dashboard';
     header('location: /login');
 }
-
 ?>
 <?php require base_path('views/partials/head.php') ?>
 <?php require base_path('views/partials/sidebar.php') ?>
 
 <div class="page-wrapper">
+
+
 			<div class="content container-fluid">
 				<div class="page-header">
 					<div class="row">
 						<div class="col-sm-12 mt-5">
-							<h3 class="page-title mt-3">Good Morning!</h3>
-							<ul class="breadcrumb">
-								<li class="breadcrumb-item active"><?= $heading ?></li>
-							</ul>
+							<h3 class="page-title mt-3">Good Day, <?= $_SESSION['first_name'] ?></h3>
+							
 						</div>
-						<a href="tel:123123123123">Dial Emergency Number User</a>
-
-						<?php echo $_SESSION['email']; ?>
 					</div>
+					<?php if (isset($_SESSION['message']) ) : ?>
+						<br>
+						<div class="alert alert-success alert-dismissible fade show" role="alert">
+									<strong><?= $_SESSION['message'] ?></strong>
+										<?php unset($_SESSION['message']) ?>
+						</div>
+					<?php endif; ?>
+
+				<br>
+					<div class="row">
+					<div class="col-xl-3 col-sm-6 col-12">
+						<div class="card board1 fill" style="background-color:#f2f5fa; -webkit-text-fill-color:white">
+							<div class="card-body">
+								<div class="dash-widget-header">
+								<button class="btn btn-rounded btn-info btn-lg col-12" onclick="location.href='/reports'">
+									REQUEST FOR ASSISTANCE
+								</button>
+								
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-sm-6 col-12">
+						<div class="card board1 fill" style="background-color:#f2f5fa; -webkit-text-fill-color:white"">
+							<div class="card-body">
+								<div class="dash-widget-header">
+								<button class="btn btn-rounded btn-danger btn-lg col-12" onclick="location.href='tel:12121'">
+									DIAL EMERGENCY NUMBER
+								</button>	
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					
+				</div>
 				</div>
 			</div>
 </div>

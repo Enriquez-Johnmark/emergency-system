@@ -9,12 +9,12 @@ $db = new Database($config['database']);
 
 if(!isset($_SESSION['auth']))
 {
-    $_SESSION['message'] = 'Login to Access Dashboard';
+    $_SESSION['error'] = 'Login to Access Dashboard';
     header('location: /login');
 }else{
     if($_SESSION['roles'] != '1' && $_SESSION['roles'] != '2')
     {
-        $_SESSION['message'] = 'You are not Authorized';
+        $_SESSION['error'] = 'You are not Authorized';
         header('location: /login');
     }
 }

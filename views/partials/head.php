@@ -15,12 +15,15 @@
 	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/assets/plugins/fontawesome/css/all.min.css">
 	<link rel="stylesheet" href="/assets/plugins/fontawesome/css/fontawesome.min.css">
+	<link rel="stylesheet" href="/assets/plugins/datatables/datatables.min.css">
 	<link rel="stylesheet" href="/assets/css/feathericon.min.css">
 	<link rel="stylesheet" href="/assets/plugins/morris/morris.css">
 	<link rel="stylesheet" href="/assets/css/style.css"> </head>
+	<link rel="stylesheet" href="../../../ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
 
 
-	<link rel="stylesheet" href="/assets/plugins/datatables/datatables.min.css">
+
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-datetimepicker.min.css">
 
 <body>
 	<div class="main-wrapper">

@@ -34,6 +34,11 @@ class Database
         return $this->statement->fetchAll();
     }
 
+    public function rowCount()
+    {
+        return $this->statement->fetchColumn();
+    }
+
     public function find()
     {
         return $this->statement->fetch();

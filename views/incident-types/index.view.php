@@ -1,6 +1,5 @@
 <?php require base_path('views/partials/head.php') ?>
 <?php require base_path('views/partials/sidebar.php') ?>
-<?php session_start(); ?>
 <?php require base_path('Core/Authentication.php') ?>
 <div class="page-wrapper">
 			<div class="content container-fluid">

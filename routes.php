@@ -14,11 +14,22 @@ $router->post('/register', 'controllers/register/store.php');
 $router->get('/user', 'controllers/dashboard/user.php');
 $router->get('/dashboard', 'controllers/dashboard/admin.php');
 
-// User
+
+
+// User My Reports
+$router->get('/reports', 'controllers/user-reports/create.php');
+$router->post('/reports', 'controllers/user-reports/store.php');
+$router->get('/my-reports', 'controllers/user-reports/index.php');
+$router->post('/my-reports', 'controllers/user-reports/index.php');
+
 
 
 // Incident Reports
-$router->get('/incident', 'controllers/incident/index.php');
+$router->get('/pending', 'controllers/incident/pending.php');
+$router->get('/ongoing', 'controllers/incident/ongoing.php');
+$router->get('/completed', 'controllers/incident/completed.php');
+$router->get('/incident', 'controllers/incident/edit.php');
+$router->put('/incident', 'controllers/incident/update.php');
 
 
 // Incidents Types

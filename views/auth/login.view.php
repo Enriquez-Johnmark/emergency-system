@@ -10,7 +10,7 @@ session_start();
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-	<title>Hotel Dashboard Template</title>
+	<title>EmergPol</title>
 	<link rel="shortcut icon" type="image/x-icon" href="/assets/img/emergency.png">
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
@@ -38,6 +38,9 @@ session_start();
 							<div class="alert alert-success alert-dismissible fade show text-center" role="alert">
 										<strong><?= $_SESSION['message'] ?></strong>
 											<?php unset($_SESSION['message']) ?>
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
 							</div>
 						<?php endif; ?>
 
