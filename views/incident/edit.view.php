@@ -98,7 +98,7 @@
                                             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                                             
                                             <a href="<?= $reportId['photos']?>" target="_blank">
-                                                <figure><img class="img-fluid img-thumbnail" style="max-height: 400px;max-width: 400px;" src="<?= $reportId['photos']?>" alt="Incident Photo"></figure>
+                                                <figure><img class="img-fluid img-thumbnail" style="max-height: 250px;max-width: 250px;" src="<?= $reportId['photos']?>" alt="Incident Photo"></figure>
                                                 </a>
                                             </div>
                                            

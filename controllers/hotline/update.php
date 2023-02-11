@@ -14,18 +14,18 @@ if (! Validator::string($_POST['name'], 1, 55)) {
     $errors['name'] = 'Name is Required';
 }
 
-if (! Validator::string($_POST['description'], 1, 55)) {
-    $errors['description'] = 'Description is Required';
+if (! Validator::string($_POST['number'], 1, 55)) {
+    $errors['number'] = 'Description is Required';
 }
 
-$incidentId = $db->query('select * from incident_types where id = :id', [
+$hotlineId = $db->query('select * from hotlines where id = :id', [
     'id' => $_POST['id']
 ])->findOrFail();
 
 if (! empty($errors)) {
-    return view("incident-types/edit.view.php", [
+    return view("hotlines/edit.view.php", [
         'heading' => 'Add Incident Type',
-        'incidentId'    => $incidentId,
+        'hotlineId'    => $hotlineId,
         'errors' => $errors
     ]);
 } 
@@ -34,13 +34,13 @@ if (! empty($errors)) {
 
 
 
-$db->query('UPDATE incident_types SET name=:name, description=:description WHERE id=:id', [
+$db->query('UPDATE hotlines SET name=:name, number=:number WHERE id=:id', [
     'id'    => $_POST['id'],
     'name' => $_POST['name'],
-    'description' => $_POST['description']
+    'number' => $_POST['number']
 ]);
 
-$_SESSION['message'] = "Successfully Edited Incident Type";
-header('location: /incident-types');
+$_SESSION['message'] = "Successfully Edited Hotline";
+header('location: /hotlines');
 // header('location: /incident-type');
 die();

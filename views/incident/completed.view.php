@@ -1,3 +1,18 @@
+<?php
+use Core\Database;
+
+$config = require base_path('config.php');
+$db = new Database($config['database']);
+
+    if($_SESSION['roles'] != '1' && $_SESSION['roles'] != '2' )
+    {
+        $_SESSION['error'] = 'You are not Authorized';
+        header('location: /login');
+    }
+
+?>
+
+
 <?php require base_path('views/partials/head.php') ?>
 <?php require base_path('views/partials/sidebar.php') ?>
 
@@ -68,9 +83,10 @@
 												<th>Comments</th>
 												<th>Reported By</th>
                                                 <!-- <th>Dispatched Respondent</th> -->
-                                                
                                                 <th>Status</th>
+												<?php if ($_SESSION['roles'] == '1' ) :?>
 												<th class="text-center">Actions</th>
+												<?php endif; ?>
 											</tr>
 										</thead>
 										<tbody>
@@ -85,9 +101,10 @@
 												<td><?= $report['first_name'].' '.$report['last_name'] ?></td>
 												<td>
 													<?php if ($report['status'] == '1' ) :?>
-														<div class="actions"> <a href="#" class="btn btn-sm bg-success-light mr-2">Done</a> </div>
+														<div class="actions"> <a style="pointer-events: none" class="btn btn-sm bg-success-light mr-2">Done</a> </div>
 													<?php endif; ?>
 												</td>
+												<?php if ($_SESSION['roles'] == '1' ) :?>
 												<td class="text-center">
 													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
 														<div class="dropdown-menu dropdown-menu-right"> 
@@ -96,6 +113,7 @@
 														</div>
 													</div>
 												</td>
+												<?php endif; ?>
 											</tr>
 											<?php endforeach; ?>
                                             

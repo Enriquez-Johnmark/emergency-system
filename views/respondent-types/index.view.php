@@ -1,6 +1,6 @@
+<?php require base_path('Core/AdminAuthentication.php') ?>
 <?php require base_path('views/partials/head.php') ?>
 <?php require base_path('views/partials/sidebar.php') ?>
-<?php require base_path('Core/Authentication.php') ?>
 <div class="page-wrapper">
 			<div class="content container-fluid">
 				<div class="page-header">
@@ -40,9 +40,9 @@
 												<td><?= $respondentType['name'] ?></td>
 												<td>
 												<?php if ($respondentType['status'] == 1 ) :?>
-													<div class="actions"> <a href="#" class="btn btn-sm bg-success-light mr-2">Active</a> </div>
+													<div class="actions"> <a style="pointer-events: none" class="btn btn-sm bg-success-light mr-2">Active</a> </div>
 												<?php else: ?>
-													<div class="actions"> <a href="#" class="btn btn-sm bg-danger-light mr-2">Inactive</a> </div>
+													<div class="actions"> <a style="pointer-events: none" class="btn btn-sm bg-danger-light mr-2">Inactive</a> </div>
 												<?php endif; ?>
 												</td>
 												<td class="text-center">

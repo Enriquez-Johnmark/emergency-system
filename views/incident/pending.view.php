@@ -1,3 +1,15 @@
+<?php
+use Core\Database;
+
+$config = require base_path('config.php');
+$db = new Database($config['database']);
+
+    if($_SESSION['roles'] != '1' && $_SESSION['roles'] != '2' )
+    {
+        $_SESSION['error'] = 'You are not Authorized';
+        header('location: /login');
+    }
+?>
 <?php require base_path('views/partials/head.php') ?>
 <?php require base_path('views/partials/sidebar.php') ?>
 
@@ -87,9 +99,9 @@
 												<td><?= $report['first_name'].' '.$report['last_name'] ?></td>
 												<td>
 													<?php if ($report['status'] == '0' ) :?>
-														<div class="actions"> <a href="#" class="btn btn-sm bg-warning-light mr-2">Pending</a> </div>
+														<div class="actions"> <a style="pointer-events: none" class="btn btn-sm bg-warning-light mr-2">Pending</a> </div>
                                                     <?php else: ?>
-                                                    <div class="actions"> <a href="#" class="btn btn-sm bg-danger-light mr-2">Done</a> </div>
+                                                    <div class="actions"> <a style="pointer-events: none" class="btn btn-sm bg-danger-light mr-2">Done</a> </div>
                                                     
                                                     <?php endif; ?>
 												</td>

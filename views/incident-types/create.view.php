@@ -1,3 +1,4 @@
+<?php require base_path('Core/AdminAuthentication.php') ?>
 <?php require base_path('views/partials/head.php') ?>
 <?php require base_path('views/partials/sidebar.php') ?>
 
@@ -58,7 +59,7 @@
                                     </select>
                             </div> -->
                             <div class="text-right">
-                                <button type="submit" class="btn btn-primary">Save</button>
+                                <button type="submit" class="btn btn-primary">Save Data</button>
                             </div>
                         </form>
                     </div>

@@ -8,7 +8,7 @@ $db = new Database($config['database']);
 $hotlines = $db->query('select * from hotlines')->get();
 
 
-view("dashboard/user.view.php", [
-    'heading' => 'Dashboard',
-    'hotlines' => $hotlines
+view("hotlines/index.view.php", [
+    'heading' => 'Hotlines',
+    'hotlines' => $hotlines,
 ]);

@@ -1,4 +1,4 @@
-<?php require base_path('Core/UserAuthentication.php') ?>
+<?php require base_path('Core/AdminAuthentication.php') ?>
 <?php require base_path('views/partials/head.php') ?>
 <?php require base_path('views/partials/sidebar.php') ?>
 
@@ -8,21 +8,11 @@
 					<div class="row align-items-center">
 						<div class="col">
 							<div class="mt-5">
-								<h4 class="card-title float-left mt-2"><?= $heading ?></h4>
-								<i style="font-size:26px;cursor: pointer" class="fa float-right mt-1" onClick="window.location.href=window.location.href">&#xf021;</i>
-
-								<!-- <a href="#" class="btn btn-primary float-right veiwbutton">Add Incident</a>  -->
-
-							</div>
-	
-							</div>
-
+								<h4 class="card-title float-left mt-2"><?= $heading ?></h4> <a href="/hotlines/create" class="btn btn-primary float-right veiwbutton">Add Hotline</a> </div>
+						</div>
 					</div>
 				</div>
-
 				<div class="row">
-					<div class="col">
-					</div>
 					<!-- <div class="col-lg-12">
 						<form>
 							<div class="row formtype">
@@ -56,42 +46,45 @@
 						</form>
 					</div> -->
 				</div>
+				<?php if (isset($_SESSION['message']) ) : ?>
+                    
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        <strong><?= $_SESSION['message'] ?></strong>
+											<?php unset($_SESSION['message']) ?>
+                            </div>
+                <?php endif; ?>
 				<div class="row">
-
 					<div class="col-sm-12">
+					
 						<div class="card card-table">
 							<div class="card-body booking_card">
 								<div class="table-responsive">
-									<table class="reports table table-stripped table table-hover table-center mb-0">
+									<table class="datatable table table-stripped table table-hover table-center mb-0">
 										<thead>
 											<tr>
-												<th width="10%">Reported Date</th>   
-												<th width="10%">Incident</th>
-                        <th width="5%">Status</th>
-												<th>Message from Respondent</th>
+
+                                                <th>#</th>
+												<th>Name</th>
+												<th>Tel/Mobile No.</th>
+												<th class="text-center">Actions</th>
 											</tr>
 										</thead>
 										<tbody>
-
-											<?php foreach ($reports as $report) : ?>
+											<?php $i=1; ?>
+											<?php foreach ($hotlines as $hotline) : ?>
 											<tr>
-												<td><?= date('F j, Y, g:i a',strtotime($report['created_at'])) ?></td>
-												<td><?= $report['name'] ?></td>
-												<td>
-													<?php if ($report['status'] == '1' ) :?>
-														    <div class="actions"> <a class="btn btn-sm bg-success-light mr-2" style="pointer-events: none">Done</a> </div>
-                          <?php elseif($report['status'] == '2'): ?>
-                                <div class="actions"> <a class="btn btn-sm bg-success-light mr-2" style="pointer-events: none">Ongoing</a> </div>    
-                          <?php else: ?>
-                                <div class="actions"> <a class="btn btn-sm bg-warning-light mr-2" style="pointer-events: none">Pending</a> </div>
-                          <?php endif; ?>
+												<td><?=  $i++ ?></td>
+												<td><?= $hotline['name'] ?></td>
+												<td><?= $hotline['number'] ?></td>
+												<td class="text-center">
+													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
+														<div class="dropdown-menu dropdown-menu-right"> 
+															<a class="dropdown-item" href="/hotline?id=<?= $hotline['id'] ?>"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> 
+														</div>
+													</div>
 												</td>
-                        <td><?= $report['message'] ?: 'No message yet.' ?></td>
-
-												
 											</tr>
 											<?php endforeach; ?>
-                                            
 											
 										</tbody>
 									</table>
@@ -100,6 +93,7 @@
 						</div>
 					</div>
 				</div>
+				
 			</div>
 		</div>
 

@@ -1,6 +1,7 @@
+<?php require base_path('Core/AdminAuthentication.php') ?>
 <?php require base_path('views/partials/head.php') ?>
 <?php require base_path('views/partials/sidebar.php') ?>
-<?php require base_path('Core/Authentication.php') ?>
+
 <div class="page-wrapper">
 			<div class="content container-fluid">
 				<div class="page-header">

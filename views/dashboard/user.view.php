@@ -1,20 +1,4 @@
-
-<?php
-session_start();
-use Core\Validator;
-use Core\Database;
-
-
-$config = require base_path('config.php');
-$db = new Database($config['database']);
-
-
-if(!isset($_SESSION['auth']))
-{
-    $_SESSION['error'] = 'Login to Access Dashboard';
-    header('location: /login');
-}
-?>
+<?php require base_path('Core/UserAuthentication.php') ?>
 <?php require base_path('views/partials/head.php') ?>
 <?php require base_path('views/partials/sidebar.php') ?>
 
@@ -56,7 +40,7 @@ if(!isset($_SESSION['auth']))
 							<div class="card-body">
 								<div class="dash-widget-header">
 								<button class="btn btn-rounded btn-danger btn-lg col-12" onclick="location.href='tel:12121'">
-									DIAL EMERGENCY NUMBER
+									DIAL HOTLINE NUMBER
 								</button>	
 								</div>
 							</div>
@@ -65,6 +49,34 @@ if(!isset($_SESSION['auth']))
 					
 					
 				</div>
+				<br>
+				<br/>
+				<div class="row">
+                     <div class="col-md-4 d-flex">
+                        <div class="card flex-fill">
+                           <div class="card-header" style="background-color: #fece2e;">
+                              <h2 class="card-title" style="font-size:19px"><b>BAYAWAN EMERGENCY LINES</b></h2>
+                           </div>
+                           <div class="card-body">
+						   <?php foreach ($hotlines as $hotline) : ?>
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item"><u style="text-decoration-color: #fece2e;font-size:17px;font-weight:bold"><?= strtoupper($hotline['name']) ?></u>
+										<span class="float-right" >
+											<a href="tel:<?= $hotline['number'] ?>" style="color:black">
+												<u style="text-decoration-color: #fece2e;font-size:17px;font-weight:bold">
+													<?= $hotline['number'] ?>
+												</u>
+											</a>
+										</span>
+									</li>
+								</ul>
+							<?php endforeach; ?>
+							</div>
+                        </div>
+                     </div>
+                     
+                     
+                  </div>
 				</div>
 			</div>
 </div>

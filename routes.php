@@ -38,6 +38,7 @@ $router->get('/incident-type', 'controllers/incident-types/edit.php');
 $router->get('/incident-types/create', 'controllers/incident-types/create.php');
 $router->post('/incident-types', 'controllers/incident-types/store.php');
 $router->put('/incident-type', 'controllers/incident-types/update.php');
+$router->delete('/incident-type', 'controllers/incident-types/destroy.php');
 
 
 // Respondent Type
@@ -46,6 +47,7 @@ $router->get('/respondent-type', 'controllers/respondent-types/edit.php');
 $router->get('/respondent-types/create', 'controllers/respondent-types/create.php');
 $router->post('/respondent-types', 'controllers/respondent-types/store.php');
 $router->put('/respondent-type', 'controllers/respondent-types/update.php');
+$router->delete('/respondent-type', 'controllers/respondent-types/destroy.php');
 
 // Respondent 
 $router->get('/respondents', 'controllers/respondents/index.php');
@@ -53,3 +55,14 @@ $router->get('/respondent', 'controllers/respondents/edit.php');
 $router->get('/respondents/create', 'controllers/respondents/create.php');
 $router->post('/respondents', 'controllers/respondents/store.php');
 $router->put('/respondent', 'controllers/respondents/update.php');
+$router->delete('/respondent', 'controllers/respondents/destroy.php');
+
+
+// Hotlines
+
+$router->get('/hotlines', 'controllers/hotline/index.php');
+$router->get('/hotline', 'controllers/hotline/edit.php');
+$router->get('/hotlines/create', 'controllers/hotline/create.php');
+$router->post('/hotlines', 'controllers/hotline/store.php');
+$router->put('/hotline', 'controllers/hotline/update.php');
+$router->delete('/hotline', 'controllers/hotline/destroy.php');

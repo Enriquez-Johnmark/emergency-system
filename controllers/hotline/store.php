@@ -14,21 +14,25 @@ if (! Validator::string($_POST['name'], 1, 55)) {
     $errors['name'] = 'Name is Required';
 }
 
+if (! Validator::string($_POST['number'], 1, 55)) {
+    $errors['number'] = 'Number is Required';
+}
 
 if (! empty($errors)) {
-    return view("respondent-types/create.view.php", [
-        'heading' => 'Add Respondent Type',
+    return view("hotlines/create.view.php", [
+        'heading' => 'Add Incident Type',
         'errors' => $errors
     ]);
 } 
 
 
-$db->query('INSERT INTO respondent_types(name, status) VALUES(:name, :status)', [
+
+$q1 = $db->query('INSERT INTO hotlines(name, number) VALUES(:name, :number)', [
     'name' => $_POST['name'],
-    'status' => $_POST['status']
+    'number' => $_POST['number']
 ]);
 
-$_SESSION['message'] = "Successfully Created Respondent Type";
-header('location: /respondent-types');
+$_SESSION['message'] = "Successfully Created Hotline";
+header('location: /hotlines');
 // header('location: /incident-type');
 die();

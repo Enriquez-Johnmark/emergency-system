@@ -21,7 +21,7 @@ $incident = $db->query('select * from incident_types where id = :id', [
 ])->findOrFail();
 
 
-$respondents = $db->query('select * from respondents')->get();
+$respondents = $db->query('select * from respondents where status = 1')->get();
 
 view("incident/edit.view.php", [
     'heading' => 'Incident Information',

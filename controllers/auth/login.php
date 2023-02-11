@@ -50,8 +50,6 @@ if($users > 0)
         
         if($_SESSION['roles'] == '3') // User
         {
-
-           
             header('location: /user');
             exit(0);
         }

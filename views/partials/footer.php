@@ -14,7 +14,19 @@
 	<script src="../../../ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 
 
+<script>
+	$(document).ready(function () {
+    $('.incident').DataTable({
+        order: [[1, 'desc']],
+    });
+});
+</script>
 
+<script>
+	$(document).ready(function () {
+    $('.reports').DataTable();
+});
+</script>
 
 	<script>
 // Add the following code if you want the name of the file appear on select
@@ -117,14 +129,6 @@ function showPosition(position) {
 </script>
 
 
-
-<script>
-	$(document).ready(function () {
-    $('.incident').DataTable({
-        order: [[1, 'desc']],
-    });
-});
-</script>
 </body>
 
 

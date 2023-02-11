@@ -1,12 +1,19 @@
 <?php
-    if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    } 
+use Core\Database;
+
+$config = require base_path('config.php');
+$db = new Database($config['database']);
+
+    if($_SESSION['roles'] != '1' && $_SESSION['roles'] != '2' )
+    {
+        $_SESSION['error'] = 'You are not Authorized';
+        header('location: /login');
+    }
+
 ?>
 <?php require base_path('views/partials/head.php') ?>
 <?php require base_path('views/partials/sidebar.php') ?>
-<?php require base_path('Core/Authentication.php') ?>
+
 
 
 <div class="page-wrapper">

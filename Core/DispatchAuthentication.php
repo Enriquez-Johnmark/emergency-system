@@ -1,5 +1,4 @@
 <?php
-use Core\Validator;
 use Core\Database;
 
 
@@ -11,10 +10,10 @@ if(!isset($_SESSION['auth']))
 {
     $_SESSION['error'] = 'Login to Access Dashboard';
     header('location: /login');
-}else{
-    if($_SESSION['roles'] != '1' && $_SESSION['roles'] != '2')
+
+    if($_SESSION['roles'] != '2')
     {
-        $_SESSION['error'] = 'You are not Authorized';
+        $_SESSION['error'] = 'You are not Authorized as DISPATCHER';
         header('location: /login');
     }
 }
