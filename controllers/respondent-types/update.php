@@ -42,7 +42,7 @@ $db->query('UPDATE respondent_types SET name=:name, status=:status WHERE id=:id'
 
 
 
-$_SESSION['message'] = "Successfully Edited Respondent Types";
+$_SESSION['message'] = "Successfully Updated Respondent Types";
 header('location: /respondent-types');
 // header('location: /incident-type');
 die();

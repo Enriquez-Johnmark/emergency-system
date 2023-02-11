@@ -40,7 +40,7 @@ $db->query('UPDATE hotlines SET name=:name, number=:number WHERE id=:id', [
     'number' => $_POST['number']
 ]);
 
-$_SESSION['message'] = "Successfully Edited Hotline";
+$_SESSION['message'] = "Successfully Updated Hotline";
 header('location: /hotlines');
 // header('location: /incident-type');
 die();

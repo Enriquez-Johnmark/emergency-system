@@ -66,3 +66,11 @@ $router->get('/hotlines/create', 'controllers/hotline/create.php');
 $router->post('/hotlines', 'controllers/hotline/store.php');
 $router->put('/hotline', 'controllers/hotline/update.php');
 $router->delete('/hotline', 'controllers/hotline/destroy.php');
+
+
+$router->get('/dispatchers', 'controllers/dispatcher/index.php');
+$router->get('/dispatcher', 'controllers/dispatcher/edit.php');
+$router->get('/dispatchers/create', 'controllers/dispatcher/create.php');
+$router->post('/dispatchers', 'controllers/dispatcher/store.php');
+$router->put('/dispatcher', 'controllers/dispatcher/update.php');
+$router->delete('/dispatcher', 'controllers/dispatcher/destroy.php');

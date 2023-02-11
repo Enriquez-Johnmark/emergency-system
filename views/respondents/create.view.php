@@ -46,26 +46,15 @@
                                 <label>Name</label>
                                 <input type="text" class="form-control" name="name">
                             </div>
-                            <div class="form-group">
-                                <label>Respondent Type</label>
-                                
-                                <select class="form-control" name="respondent_type_id">
-                                       <option value="" selected disabled>-- Select Respondent Types --</option>
-                                       <?php foreach($respondentTypes as $respondentType) : ?>
-                                       <option value="<?= $respondentType['id'] ?>"><?= $respondentType['name'] ?></option>
-                                       <!-- <option value="0">Ambulance</option> -->
-                                       <?php endforeach; ?>
-                                </select>
-                               
-                            </div>
-                            <div class="form-group">
+                           
+                            <!-- <div class="form-group">
                                 <label>Team Leader</label>
                                 <input type="text" class="form-control" name="team_leader">
-                            </div>
-                            <div class="form-group">
+                            </div> -->
+                            <!-- <div class="form-group">
                                 <label>Mobile No./Tel No.</label>
                                 <input type="text" class="form-control" name="mobile_no">
-                            </div>
+                            </div> -->
                             <div class="form-group">
                                 <label>Status</label>
                                 <select class="form-control" name="status" id="status" required="true">

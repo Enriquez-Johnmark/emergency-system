@@ -24,13 +24,10 @@ if (! empty($errors)) {
 
 
 
-$db->query('INSERT INTO respondents(name, respondent_type_id,team_leader,mobile_no, status) 
-    VALUES(:name,:respondent_type_id,:team_leader,:mobile_no, :status)', 
+$db->query('INSERT INTO respondents(name, status) 
+    VALUES(:name,:status)', 
     [
     'name' => $_POST['name'],
-    'respondent_type_id' => $_POST['respondent_type_id'],
-    'team_leader' => $_POST['team_leader'],
-    'mobile_no' => $_POST['mobile_no'],
     'status' => $_POST['status']
     ]);
 

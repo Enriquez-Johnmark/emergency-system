@@ -19,9 +19,8 @@ INNER JOIN users   ON reports.user_id=users.id
 WHERE user_id = :id
 ORDER BY updated_at desc;
 ',[
-    'id' => 5
+    'id' => $_SESSION['id']
 ])->get();
-
 
 
 

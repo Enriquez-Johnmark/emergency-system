@@ -34,18 +34,15 @@ if (! empty($errors)) {
 
 
 
-$db->query('UPDATE respondents SET name=:name, respondent_type_id=:respondent_type_id,team_leader=:team_leader, mobile_no=:mobile_no,status=:status WHERE id=:id', [
+$db->query('UPDATE respondents SET name=:name,status=:status WHERE id=:id', [
     'id'    => $_POST['id'],
     'name' => $_POST['name'],
-    'respondent_type_id' => $_POST['respondent_type_id'],
-    'team_leader' => $_POST['team_leader'],
-    'mobile_no' => $_POST['mobile_no'],
     'status' => $_POST['status']
 ]);
 
 
 
-$_SESSION['message'] = "Successfully Edited Respondents";
+$_SESSION['message'] = "Successfully Updated Respondents";
 header('location: /respondents');
 // header('location: /incident-type');
 die();

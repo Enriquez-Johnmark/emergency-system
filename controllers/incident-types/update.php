@@ -40,7 +40,7 @@ $db->query('UPDATE incident_types SET name=:name, description=:description WHERE
     'description' => $_POST['description']
 ]);
 
-$_SESSION['message'] = "Successfully Edited Incident Type";
+$_SESSION['message'] = "Successfully Updated Incident Type";
 header('location: /incident-types');
 // header('location: /incident-type');
 die();

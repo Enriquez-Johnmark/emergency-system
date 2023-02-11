@@ -35,7 +35,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-xl-3 col-sm-6 col-12">
+					<!-- <div class="col-xl-3 col-sm-6 col-12">
 						<div class="card board1 fill" style="background-color:#f2f5fa; -webkit-text-fill-color:white"">
 							<div class="card-body">
 								<div class="dash-widget-header">
@@ -45,7 +45,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					
 					
 				</div>

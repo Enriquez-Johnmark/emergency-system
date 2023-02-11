@@ -28,10 +28,6 @@
 											<tr>
                                                 <th>#</th>
 												<th>Name</th>
-												<th>Team Leader</th>
-												<th>Mobile No/Tel. No</th>
-												<th>Respondent Type</th>
-												<th>Created At</th>
 												<th>Status</th>
 												<th class="text-center">Actions</th>
 											</tr>
@@ -43,10 +39,6 @@
 												
                                                 <td><?= $i++; ?></td>
 												<td><?= $respondent['name'] ?></td>
-												<td><?= $respondent['team_leader'] ?></td>
-												<td><?= $respondent['mobile_no'] ?></td>
-												<td><?= $respondent['types'] ?></td>
-												<td><?= date('d F Y, h:i:s A',strtotime($respondent['created_at'])) ?></td>
 												<td>
 													<?php if ($respondent['status'] == 1 ) :?>
 														<div class="actions"> <a style="pointer-events: none" class="btn btn-sm bg-success-light mr-2">Active</a> </div>
