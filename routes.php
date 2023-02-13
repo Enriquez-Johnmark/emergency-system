@@ -1,5 +1,6 @@
 <?php
 
+
 // Auth
 $router->get('/', 'controllers/auth/home.php');
 $router->get('/login', 'controllers/auth/index.php');
