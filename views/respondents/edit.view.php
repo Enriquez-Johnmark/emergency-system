@@ -37,28 +37,6 @@
                                 
                             </div>
                             <div class="form-group">
-                                <label>Respondent Type</label>
-                                <select class="form-control" name="respondent_type_id" id="status" required="true">
-                                <option value="" selected disabled>-- Select Respondent Types --</option>
-                                <?php foreach ( $respondentTypes as $respondentType ): ?>
-                                <option value="<?php echo $respondentType['id']; ?>" 
-                                <?php if ($respondentType['id'] == $respondentId['respondent_type_id']) echo ' selected="selected"'; ?>>
-                                        <?php echo $respondentType['name']; ?>
-                                </option>
-                                <?php endforeach; ?>
-                                </select>
-                               
-                               
-                            </div>
-                            <div class="form-group">
-                                <label>Team Leader</label>
-                                <input type="text" class="form-control" name="team_leader" value="<?= $respondentId['team_leader'] ?>">
-                            </div>
-                            <div class="form-group">
-                                <label>Mobile No./Tel No.</label>
-                                <input type="number" class="form-control" name="mobile_no" value="<?= $respondentId['mobile_no'] ?>">
-                            </div>
-                            <div class="form-group">
                                 <label>Status</label>
                                     <select class="form-control" name="status" id="status" required="true">
                                        <option value="" selected disabled>-- Select Status --</option>

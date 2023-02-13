@@ -145,7 +145,6 @@
                                         <select class="form-control" name="status" id="status" required="true">
                                             <option value="" selected disabled>-- Select Status --</option>
                                             <option value="0"<?php if ($reportId['status'] == '0') echo ' selected="selected"'; ?>>Pending</option>
-                                            <option value="2"<?php if ($reportId['status'] == '2') echo ' selected="selected"'; ?>>Ongoing</option>
                                             <option value="1"<?php if ($reportId['status'] == '1') echo ' selected="selected"'; ?>>Done</option>
                                             </select>
                                     </div>

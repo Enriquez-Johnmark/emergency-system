@@ -19,7 +19,7 @@
                         <a href="#"><i class="fas fa-table"></i> <span> Incident Reports </span> <span class="menu-arrow"></span></a>
                         <ul class="submenu_class" style="display: none;">
                             <li><a class="<?= ($activePage == 'pending') ? 'active':''; ?>" href="/pending">Pending</a> </li>
-                            <li><a class="<?= ($activePage == 'ongoing') ? 'active':''; ?>" href="/ongoing">Ongoing</a> </li>
+                            <!-- <li><a class="<?= ($activePage == 'ongoing') ? 'active':''; ?>" href="/ongoing">Ongoing</a> </li> -->
                             <li><a class="<?= ($activePage == 'completed') ? 'active':''; ?>" href="/completed">Completed</a> </li>
                             <!-- <li><a class="" href="#">Add Incident</a> </li> -->
 

@@ -90,29 +90,29 @@
                                  <div class="col-md-6">
                                     <div class="form-group">
                                        <label>No. & Street</label>
-                                       <input type="text" class="form-control" name="street">
+                                       <input type="text" class="form-control" name="street" required>
                                     </div>
                                     <div class="form-group">
                                        <label>Barangay</label>
-                                       <input type="text" class="form-control" name="barangay">
+                                       <input type="text" class="form-control" name="barangay" required>
                                     </div>
                                     <div class="form-group">
                                        <label>Province</label>
-                                       <input type="text" class="form-control" name="province">
+                                       <input type="text" class="form-control" name="province" required>
                                     </div>
                                  </div>
                                  <div class="col-md-6">
                                     <div class="form-group">
                                        <label>City</label>
-                                       <input type="text" class="form-control" name="city">
+                                       <input type="text" class="form-control" name="city" required>
                                     </div>
                                     <div class="form-group">
                                        <label>Country</label>
-                                       <input type="text" class="form-control" name="country">
+                                       <input type="text" class="form-control" name="country" required>
                                     </div>
                                     <div class="form-group">
                                        <label>Zip Code</label>
-                                       <input type="number" class="form-control" name="zipcode">
+                                       <input type="number" class="form-control" name="zipcode" required>
                                     </div>
                                  </div>
                               </div>
