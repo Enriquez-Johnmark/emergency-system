@@ -47,18 +47,18 @@ $db = new Database($config['database']);
 							</div>
 						</div>
 					</div>
-					<div class="col-xl-3 col-sm-6 col-12">
+					<!-- <div class="col-xl-3 col-sm-6 col-12">
 						<div class="card board1 fill">
 							<div class="card-body">
 								<div class="dash-widget-header">
 									<div>
-										<h3 class="card_widget_header"><?php echo $countOngoing ?></h3>
+										<h3 class="card_widget_header"></h3>
 										<h6 class="text-muted"><a href="/ongoing" style="text-decoration: underline;">Ongoing Reports</a></h6> 
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					<div class="col-xl-3 col-sm-6 col-12">
 						<div class="card board1 fill">
 							<div class="card-body">

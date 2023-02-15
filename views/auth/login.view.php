@@ -13,12 +13,20 @@
 	<link rel="stylesheet" href="assets/plugins/morris/morris.css">
 	<link rel="stylesheet" href="assets/css/style.css"> </head>
 
+	<style>
+		@media screen and (max-width: 2000px) and (min-width: 767px) {
+		h1.emerg {
+			display: none;
+		}
+		}
+	</style>
+
 <body>
     <div class="main-wrapper login-body">
 		<div class="login-wrapper">
 		
 			<div class="container">
-			
+			<h1 class="emerg text-center" style="font-weight:bold;">EmergPol</h1>
 				<div class="loginbox">
 					
 					<div class="login-left"><span><h2><strong>EmergPol<h2></strong></span>
