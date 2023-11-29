@@ -16,6 +16,10 @@ $reportUser = $db->query('select * from users where id = :id', [
     'id' => $reportId['user_id']
 ])->findOrFail();
 
+$reportDispatcher = $db->query('select * from users where id = :id', [
+    'id' => $reportId['dispatcher_id']
+])->find();
+
 $incident = $db->query('select * from incident_types where id = :id', [
     'id' => $reportId['incident_type_id']
 ])->findOrFail();
@@ -27,6 +31,7 @@ view("incident/edit.view.php", [
     'heading' => 'Incident Information',
     'reportId' => $reportId,
     'reportUser'   => $reportUser,
+    'reportDispatcher'   => isset($reportDispatcher),
     'incident' => $incident,
     'respondents' => $respondents,
     'errors'    => []

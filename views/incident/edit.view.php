@@ -148,6 +148,10 @@
                                             <option value="1"<?php if ($reportId['status'] == '1') echo ' selected="selected"'; ?>>Done</option>
                                             </select>
                                     </div>
+                                    <div>
+                                        <p>Dispatched By: <?= $reportDispatcher['first_name']?></p>
+
+                                    </div>
 
                                     <div class="text-right">
                                         <button type="submit" class="btn btn-primary">Update</button>
